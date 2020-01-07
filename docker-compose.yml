@@ -1,0 +1,10 @@
+version: "3.0"
+
+services:
+  evcxr:
+    image: hgfkeep/rust-jupyter
+    user: 1000:1000
+    volumes:
+      - ./notebooks:/home/jupyter/notebooks
+    ports:
+      - 8888:8888
