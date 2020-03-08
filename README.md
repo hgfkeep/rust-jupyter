@@ -45,4 +45,4 @@ If we want to install package with `cargo`， we can also do it the same way but
 cargo install fmt
 ```
 
-cargo packages will install in `/home/jupyter/.local/lib/cargo`.
+cargo packages will install in `/usr/local/cargo`.
