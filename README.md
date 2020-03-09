@@ -48,7 +48,7 @@ cargo install fmt
 cargo packages will install in `/home/jupyter/.local/lib/cargo`.
 
 
-##Update Log
+## Update Log
 
 ### v1.0[latest]
 
