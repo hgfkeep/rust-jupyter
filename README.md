@@ -47,8 +47,22 @@ If we want to install package with `cargo`， we can also do it the same way but
 !cargo install fmt
 ```
 
+or use cargo-edit extension for non-binary dependencies.
+
+```
+!cargo add time
+```
+
 cargo packages will install in `/home/jupyter/.local/lib/cargo`.
 
+### import packages in jupyter
+
+```
+:dep base64 = "0.10.1"
+base64::encode(&vec![1, 2, 3, 4])
+```
+
+> 更多jupyter的使用场景和例子，参考：[rust-jupyter-example.ipynb](https://github.com/hgfkeep/rust-jupyter/blob/master/rust-jupyter-example.ipynb)
 
 ## Update Log
 
