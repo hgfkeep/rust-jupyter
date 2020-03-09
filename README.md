@@ -1,8 +1,10 @@
 # docker-rust-jupyter
 
-[中文说明](./README-zh.md)
+[中文说明](https://github.com/hgfkeep/rust-jupyter/blob/master/README-zh.md)
 
 A containerized version of the [Evcxr](https://github.com/google/evcxr), an evaluation context/REPL for Rust as a Jupyter kernel.
+
+👏welcome to use， please **star** this project if it's helpful for you! Thank you!
 
 ## Default Setting
 
@@ -55,3 +57,5 @@ cargo packages will install in `/home/jupyter/.local/lib/cargo`.
 1. add soft link of pip3
 2. change `CARGO_HOME=/home/jupyter/.local/lib/cargo`
 3. rust jupyter can add packages in jupyter
+
+
