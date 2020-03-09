@@ -31,7 +31,7 @@ docker build -t hgfdodo/evcxr .
 > ⚠️ mount volume  owner's user  must be  `1000:1000`。
 
 
-## Install packages in jupyter
+## Optioanl: Install packages in jupyter
 
 in python jupyter, just input：
 
@@ -55,7 +55,7 @@ or use cargo-edit extension for non-binary dependencies.
 
 cargo packages will install in `/home/jupyter/.local/lib/cargo`.
 
-### import packages in jupyter
+## use external packages in jupyter
 
 ```
 :dep base64 = "0.10.1"
