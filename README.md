@@ -22,7 +22,7 @@ And go to `http://localhost:8888`
 
 Or build it yourself by cloning this repo:
 
-```
+```shell
 git clone  https://github.com/cheperuiz/docker-rust-jupyter
 cd docker-rust-jupyter
 docker build -t hgfdodo/evcxr .
@@ -35,7 +35,7 @@ docker build -t hgfdodo/evcxr .
 
 in python jupyter, just input：
 
-```
+```shell
 !pip install numpy
 ```
 
@@ -43,13 +43,13 @@ python packages will install in `/home/jupyter/.local/lib/python3.7/`.
 
 If we want to install package with `cargo`， we can also do it the same way but **in python kernel**, rust kernel do not allow execute system commands!
 
-```
+```shell
 !cargo install fmt
 ```
 
 or use cargo-edit extension for non-binary dependencies.
 
-```
+```shell
 !cargo add time
 ```
 
@@ -57,7 +57,7 @@ cargo packages will install in `/home/jupyter/.local/lib/cargo`.
 
 ## use external packages in jupyter
 
-```
+```shell
 :dep base64 = "0.10.1"
 base64::encode(&vec![1, 2, 3, 4])
 ```
@@ -66,10 +66,13 @@ base64::encode(&vec![1, 2, 3, 4])
 
 ## Update Log
 
-### v1.0[latest]
+### v1.1[latest]
+
+1. add cargo-edit support, we can `cargo add package` in jupyter notebook.
+2. build to slim images
+
+### v1.0
 
 1. add soft link of pip3
 2. change `CARGO_HOME=/home/jupyter/.local/lib/cargo`
 3. rust jupyter can add packages in jupyter
-
-
