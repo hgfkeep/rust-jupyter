@@ -44,7 +44,7 @@ python 包会安装在 `/home/jupyter/.local/lib/python3.7/`
 
 cargo packages will install in `/home/jupyter/.local/lib/cargo`.
 
-### 在 jupyter notebook中 引入依赖库
+### 在 jupyter notebook中 使用外部依赖
 
 ```
 :dep base64 = "0.10.1"
