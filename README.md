@@ -44,7 +44,7 @@ python packages will install in `/home/jupyter/.local/lib/python3.7/`.
 If we want to install package with `cargo`， we can also do it the same way but **in python kernel**, rust kernel do not allow execute system commands!
 
 ```
-cargo install fmt
+!cargo install fmt
 ```
 
 cargo packages will install in `/home/jupyter/.local/lib/cargo`.
