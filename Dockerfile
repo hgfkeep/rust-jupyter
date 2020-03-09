@@ -1,4 +1,4 @@
-FROM rust:latest
+FROM rust:slim
 COPY ./config /config
 RUN useradd -m jupyter
 WORKDIR /home/jupyter
