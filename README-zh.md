@@ -66,7 +66,6 @@ docker build -t hgfdodo/evcxr .
 1. **临时方案**：镜像的启动命令改为  jupyter notebook --no-browser **--port=[some_port]** --config=/config/jupyter/jupyter_notebook_config.py。 直接覆盖config文件夹的配置。docker运行时，可直接使用docker 参数覆盖默认的启动参数，例如： `docker run -d  jupyter notebook --no-browser --port=[some_port] --config=/config/jupyter/jupyter_notebook_config.py`
 2. **永久方案**：编辑配置文件`config/jupyter/jupyter_notebook_config.py`中的`c.NotebookApp.port = [port]`, 其中`[port]`表示目标默认端口。
 
-
 ### 配置notebook 目录
 
 1. **临时方案**：镜像的启动命令改为  jupyter notebook --no-browser **--notebook-dir=[some_notebook_dir]** --config=/config/jupyter/jupyter_notebook_config.py。 命令行配置的`some_notebook_dir`会直接覆盖config文件夹的配置。docker运行时，可直接使用docker 参数覆盖默认的启动参数，例如： `docker run -d  jupyter notebook --no-browser --notebook-dir=[some_dir] --config=/config/jupyter/jupyter_notebook_config.py`
