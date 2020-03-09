@@ -36,10 +36,22 @@ python 包会安装在 `/home/jupyter/.local/lib/python3.7/`
 
 如果希望使用cargo 安装rust的软件包，也可以使用类似的方法，但是 **只能在python kernel的时候安装，rust kernel 不支持运行本地二进制文件**。
 
+或者使用cargo-edit 扩展安装非二进制的依赖库.
+
 ```
-!cargo install fmt
+!cargo add time
 ```
-cargo 安装的软件包会在 `/home/jupyter/.local/lib/cargo`.
+
+cargo packages will install in `/home/jupyter/.local/lib/cargo`.
+
+### 在 jupyter notebook中 引入依赖库
+
+```
+:dep base64 = "0.10.1"
+base64::encode(&vec![1, 2, 3, 4])
+```
+
+> 更多jupyter的使用场景和例子，参考：[rust-jupyter-example.ipynb](https://github.com/hgfkeep/rust-jupyter/blob/master/rust-jupyter-example.ipynb)
 
 ## 自己打包镜像
 
