@@ -62,3 +62,13 @@ docker build -t hgfdodo/evcxr .
 1. **临时方案**：镜像的启动命令改为  jupyter notebook --no-browser **--notebook-dir=[some_notebook_dir]** --config=/config/jupyter/jupyter_notebook_config.py。 命令行配置的`some_notebook_dir`会直接覆盖config文件夹的配置。docker运行时，可直接使用docker 参数覆盖默认的启动参数，例如： `docker run -d  jupyter notebook --no-browser --notebook-dir=[some_dir] --config=/config/jupyter/jupyter_notebook_config.py`
 2. **永久方案**：编辑配置文件`config/jupyter/jupyter_notebook_config.py`中的`c.NotebookApp.notebook_dir = "[some_dir]"`, 其中`[some_dir]`表示目标默认notebook存储目录。
 
+
+## 更新历史
+
+### v1.0[最新版本]
+
+1. 增加pip3软连接到pip
+2. 更新`CARGO_HOME=/home/jupyter/.local/lib/cargo`
+3. rust jupyter 可以在jupyter中安装packages， 详见README
+
+
