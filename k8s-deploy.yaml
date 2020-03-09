@@ -1,0 +1,40 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: rust-jupyter
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rust-jupyter
+  template:
+    metadata:
+      name: rust-jupyter
+      labels:
+        app: rust-jupyter
+    spec:
+      containers:
+      - name: rust-jupyter
+        image: hgfkeep/rust-jupyter
+        ports:
+        - containerPort: 8888
+        volumeMounts:
+        - mountPath: /home/jupyter/notebooks
+          name: dir
+      volumes:
+      - emptyDir: {}
+        name: dir
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: rust-jupyter-service
+spec:
+  type: NodePort
+  selector:
+    app: rust-jupyter
+  ports:
+  - name: r
+    port: 8888
+    targetPort: 8888
