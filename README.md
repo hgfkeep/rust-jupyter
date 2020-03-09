@@ -54,4 +54,4 @@ cargo packages will install in `/home/jupyter/.local/lib/cargo`.
 
 1. add soft link of pip3
 2. change `CARGO_HOME=/home/jupyter/.local/lib/cargo`
-3. update readme, rust jupyter can add packages in jupyter
+3. rust jupyter can add packages in jupyter
