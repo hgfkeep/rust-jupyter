@@ -2,6 +2,8 @@
 
 [Evcxr - rust Jupyter内核](https://github.com/google/evcxr)的容器化版本。
 
+👏欢迎使用，如果对您有帮助，请赏个star！谢谢！
+
 ## 镜像默认配置
 
 * notebooks目录：`/home/jupyter/notebooks`
