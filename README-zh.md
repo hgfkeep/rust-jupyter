@@ -10,8 +10,6 @@
 * 端口：**8888**
 * 登陆密码：**hgfkeep**
 
-
-
 ## 使用方法
 
 ### 运行方法
@@ -28,7 +26,7 @@
 
 jupyter重，使用pip安装package是：进入 python jupyter，输入：
 
-```
+```shell
 !pip install numpy
 ```
 
@@ -38,7 +36,7 @@ python 包会安装在 `/home/jupyter/.local/lib/python3.7/`
 
 或者使用cargo-edit 扩展安装非二进制的依赖库.
 
-```
+```shell
 !cargo add time
 ```
 
@@ -46,7 +44,7 @@ cargo packages will install in `/home/jupyter/.local/lib/cargo`.
 
 ### 在 jupyter notebook中 使用外部依赖
 
-```
+```shell
 :dep base64 = "0.10.1"
 base64::encode(&vec![1, 2, 3, 4])
 ```
@@ -55,8 +53,7 @@ base64::encode(&vec![1, 2, 3, 4])
 
 ## 自己打包镜像
 
-
-```
+```shell
 git clone  https://github.com/cheperuiz/docker-rust-jupyter
 cd docker-rust-jupyter
 docker build -t hgfdodo/evcxr .
@@ -70,19 +67,20 @@ docker build -t hgfdodo/evcxr .
 2. **永久方案**：编辑配置文件`config/jupyter/jupyter_notebook_config.py`中的`c.NotebookApp.port = [port]`, 其中`[port]`表示目标默认端口。
 
 
-
 ### 配置notebook 目录
 
 1. **临时方案**：镜像的启动命令改为  jupyter notebook --no-browser **--notebook-dir=[some_notebook_dir]** --config=/config/jupyter/jupyter_notebook_config.py。 命令行配置的`some_notebook_dir`会直接覆盖config文件夹的配置。docker运行时，可直接使用docker 参数覆盖默认的启动参数，例如： `docker run -d  jupyter notebook --no-browser --notebook-dir=[some_dir] --config=/config/jupyter/jupyter_notebook_config.py`
 2. **永久方案**：编辑配置文件`config/jupyter/jupyter_notebook_config.py`中的`c.NotebookApp.notebook_dir = "[some_dir]"`, 其中`[some_dir]`表示目标默认notebook存储目录。
 
-
 ## 更新历史
 
-### v1.0[最新版本]
+### v1.1[最新版本]
+
+1. 支持`cargo-edit`, 可以在 jupyter notebook中使用`cargo add package`。
+2. build to slim images
+
+### v1.0
 
 1. 增加pip3软连接到pip
 2. 更新`CARGO_HOME=/home/jupyter/.local/lib/cargo`
 3. rust jupyter 可以在jupyter中安装packages， 详见README
-
-
